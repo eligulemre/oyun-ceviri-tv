@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        app:key="category_translation"
+        app:title="GTA 6 Türkçe Çeviri">
+        <SwitchPreference
+            app:key="translation_enabled"
+            app:defaultValue="true"
+            app:title="Anlık altyazı çevirisi"
+            app:summary="Oyun altyazılarını okuyup Türkçe gösterir" />
+        <EditTextPreference
+            app:key="translation_anthropic_key"
+            app:title="Claude API anahtarı (isteğe bağlı)"
+            app:summary="Girilirse çeviriler çok daha doğal olur. Boşsa cihaz içi çeviri kullanılır." />
+        <EditTextPreference
+            app:key="translation_model"
+            app:defaultValue="claude-haiku-5-5"
+            app:title="Claude modeli"
+            app:useSimpleSummaryProvider="true" />
+        <SeekBarPreference
+            app:key="translation_region_top"
+            app:defaultValue="70"
+            app:min="30"
+            android:max="95"
+            app:showSeekBarValue="true"
+            app:title="Altyazı alanı başlangıcı (%)"
+            app:summary="Ekranın yüzde kaçından itibaren altyazı aransın (alttan bant)" />
+        <SeekBarPreference
+            app:key="translation_text_size"
+            app:defaultValue="26"
+            app:min="14"
+            android:max="48"
+            app:showSeekBarValue="true"
+            app:title="Türkçe yazı boyutu" />
+        <SwitchPreference
+            app:key="translation_hide_original"
+            app:defaultValue="true"
+            app:title="Orijinal altyazıyı kapat"
+            app:summary="Türkçe metin opak arka planla İngilizcenin üstüne gelir" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="category_general"
+        app:title="@string/preferences_category_title_general">
+        <Preference
+            app:key="registered_hosts"
+            tools:summary="@string/preferences_registered_hosts_summary"
+            app:summary=" "
+            app:title="@string/preferences_registered_hosts_title"
+            app:fragment="com.metallic.chiaki.settings.SettingsRegisteredHostsFragment"
+            app:icon="@drawable/ic_console_simple"/>
+
+        <SwitchPreference
+            app:key="@string/preferences_swap_cross_moon_key"
+            app:title="@string/preferences_swap_cross_moon_title"
+            app:summary="@string/preferences_swap_cross_moon_summary"
+            app:icon="@drawable/ic_gamepad" />
+
+        <SwitchPreference
+            app:key="@string/preferences_rumble_enabled_key"
+            app:title="@string/preferences_rumble_enabled_title"
+            app:summary="@string/preferences_rumble_enabled_summary"
+            app:icon="@drawable/ic_rumble" />
+
+        <SwitchPreference
+            app:key="@string/preferences_motion_enabled_key"
+            app:title="@string/preferences_motion_enabled_title"
+            app:summary="@string/preferences_motion_enabled_summary"
+            app:icon="@drawable/ic_motion" />
+
+        <SwitchPreference
+            app:key="@string/preferences_button_haptic_enabled_key"
+            app:title="@string/preferences_button_haptic_enabled_title"
+            app:summary="@string/preferences_button_haptic_enabled_summary"
+            app:icon="@drawable/ic_button_haptic" />
+
+        <SwitchPreference
+            app:key="@string/preferences_log_verbose_key"
+            app:title="@string/preferences_log_verbose_title"
+            app:summary="@string/preferences_log_verbose_summary"
+            app:icon="@drawable/ic_log" />
+
+        <Preference
+            app:key="logs"
+            app:summary="@string/preferences_logs_summary"
+            app:title="@string/preferences_logs_title"
+            app:fragment="com.metallic.chiaki.settings.SettingsLogsFragment"
+            app:icon="@drawable/ic_log"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="category_stream"
+        app:title="@string/preferences_category_title_stream">
+        <ListPreference
+            app:key="@string/preferences_resolution_key"
+            app:title="@string/preferences_resolution_title"
+            app:summary="%s"
+            app:icon="@drawable/ic_resolution"/>
+
+        <ListPreference
+            app:key="@string/preferences_fps_key"
+            app:title="@string/preferences_fps_title"
+            app:summary="%s"
+            app:icon="@drawable/ic_fps"/>
+
+        <EditTextPreference
+            app:key="@string/preferences_bitrate_key"
+            app:title="@string/preferences_bitrate_title"
+            app:icon="@drawable/ic_bitrate"/>
+
+        <ListPreference
+            app:key="@string/preferences_codec_key"
+            app:title="@string/preferences_codec_title"
+            app:summary="%s"
+            app:icon="@drawable/ic_codec"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="category_export"
+        app:title="@string/preferences_category_title_export">
+        <Preference
+            app:key="@string/preferences_export_settings_key"
+            app:summary="@string/preferences_export_settings_summary"
+            app:title="@string/preferences_export_settings_title"
+            app:icon="@drawable/ic_export"/>
+
+        <Preference
+            app:key="@string/preferences_import_settings_key"
+            app:summary="@string/preferences_import_settings_summary"
+            app:title="@string/preferences_import_settings_title"
+            app:icon="@drawable/ic_import"/>
+    </PreferenceCategory>
+</PreferenceScreen>
