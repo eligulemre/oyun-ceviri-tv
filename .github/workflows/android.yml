@@ -23,7 +23,9 @@ jobs:
           python-version: '3.12'
 
       - name: Python bağımlılıkları (nanopb)
-        run: pip install protobuf grpcio-tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq protobuf-compiler
+          pip install protobuf grpcio-tools
 
       - name: NDK ve CMake
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "ndk;28.2.13676358" "cmake;3.22.1" > /dev/null
